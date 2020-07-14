@@ -1,0 +1,10 @@
+field.formatter.settings.home_assignment_group_subscribe:
+  type: mapping
+  label: 'Home assignment group subscription'
+  mapping:
+    sub_message:
+      type: string
+      label: 'OG Subscribe Message'
+    sub_message_approval:
+      type: string
+      label: 'OG Subscribe Message (approval required)'

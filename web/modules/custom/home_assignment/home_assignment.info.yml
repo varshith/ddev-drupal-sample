@@ -1,0 +1,11 @@
+name: Home Assignment
+description: Sample task using OG.
+package: Custom
+
+core: 8.x
+type: module
+
+dependencies:
+  - drupal:og_ui
+
+version: '8.x-1.0'

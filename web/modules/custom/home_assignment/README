@@ -1,0 +1,26 @@
+Home Assignment
+===============
+
+Installation
+------------
+- Install the module as any other module] from "admin/modules". This depends on Organic Groups (og) module.
+
+Configuration
+-------------
+- Once installed, a new content type called "Group" (machine_name: ha_group) will be created.
+- A new field formatter plugin for "og_group" is present within this module and this field formatter will be set once
+this module is installed. This can be configured in "admin/structure/types/manage/ha_group/display".
+- The "Home Assignment Group Subscribe" field formatter has 2 settings fields for OG subscription message (one with
+approval and one without). These messages can contain 2 tokens "%user" and "%group" which will be replaced by the
+current user name and the group name respectively.
+
+Default Behaviour
+-----------------
+When this module is just installed and a node of type "Group" (ha_group) is created and if an authenticated user visits
+the group, they will see the default message, "Hi %user, click here if you would like to subscribe to this group called
+%group" where %user will be the current user's name and %group will be the group name.
+
+Uninstall
+---------
+On uninstall the new content type "Group" (ha_group) will not be deleted. The field formatter will not be available and
+will be switched to the default "OG Group subscribe" formatter.

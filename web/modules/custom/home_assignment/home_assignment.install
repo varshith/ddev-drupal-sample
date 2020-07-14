@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Install file for home_assignment module.
+ */
+
+use Drupal\Core\Config\FileStorage;
+use Drupal\og\Og;
+
+/**
+ * Implements hook_install().
+ */
+function home_assignment_install() {
+  // Import custom content type.
+  $config_path = drupal_get_path('module', 'home_assignment') . '/config/install';
+  $source = new FileStorage($config_path);
+  $config_storage = \Drupal::service('config.storage');
+  $config_files = \Drupal::service('file_system')->scanDirectory($config_path, '/.*\.yml$/');
+  foreach ($config_files as $config_file) {
+    $config_storage->write($config_file->name, $source->read($config_file->name));
+  }
+
+  // Add content type as a group.
+  Og::addGroup('node', 'ha_group');
+  drupal_flush_all_caches();
+}

@@ -1,0 +1,37 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.ha_group.body
+    - node.type.ha_group
+  module:
+    - home_assignment
+    - text
+    - user
+id: node.ha_group.default
+targetEntityType: node
+bundle: ha_group
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  og_group:
+    weight: 0
+    type: home_assignment_group_subscribe
+    region: content
+    label: above
+    settings:
+      sub_message: 'Hi %user, click here if you would like to subscribe to this group called %group'
+      sub_message_approval: 'Hi %user, click here if you would like to subscribe to this group called %group'
+    third_party_settings: {  }
+hidden: {  }
